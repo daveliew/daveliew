@@ -1,8 +1,10 @@
 # Hi I'm @daveliew
-## I'm learning to code as a professional
+## I'm learning to code as a professional. Happy to contribute to open source projects to get better at my skills. 
 
-###### Web Development
+### What I'm Learning: Web Development
 * JavaScript
 * Python
 * React
 * Node
+
+##### Currently part of General Assembly SEI-30
