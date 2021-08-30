@@ -10,8 +10,11 @@
 
 #### Front-end:
 * HTML5 Canvas
+* CSS
+  * Styled Components
 * React
-* Material-UI
+  * Material-UI
+  * Gatsby
 
 #### Back-end:
 * Node.js
