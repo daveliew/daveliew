@@ -1,6 +1,6 @@
 # Hi 👋 I'm @daveliew
-## I'm improving my coding to add value to my experiences in the business side of startups, incl. sales, digital marketing and finance.
-#### I am a fan of the MERN stack, but also dabble in occassional Python NLP explorations.
+## I code to add value to the business side of startups, incl. sales, digital marketing and finance.
+#### I am a fan of MERN and Jamstack, but also dabble in occassional Python NLP explorations.
 > I've graduated from General Assembly's Software Engineering Immersive bootcamp (Aug 2021)!
 ---
 
@@ -14,7 +14,7 @@
   * Styled Components
 * React
   * Material-UI
-  * Gatsby
+  * Shopify Remix 
 
 #### Back-end:
 * Node.js
@@ -23,16 +23,10 @@
 
 #### Databases:
 * MongoDB
-* PostgreSQL
+* PostgreSQL / MySQL
 
 #### SaaS tools:
-Cloudinary, GSuite, HubSpot, Intercom, Salesforce, Shopify, Stripe, Twilio, Xero
-
-#### Project Management:
-Asana, Trello
-
-#### Design Tools:
-Canva, Figma, Miro
+Cloudinary, GCP, HubSpot, Intercom, Salesforce, Shopify, Stripe, Twilio
 
 #### Digital Marketing:
 Google Ads, Google Analytics, Facebook Ads
