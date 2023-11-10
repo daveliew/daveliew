@@ -26,7 +26,7 @@
 * PostgreSQL / MySQL
 
 #### SaaS tools:
-Cloudinary, GCP, HubSpot, Intercom, Salesforce, Shopify, Stripe, Twilio
+Cloudinary, GCP, Shopify
 
 #### Digital Marketing:
-Google Ads, Google Analytics, Facebook Ads
+Google Ads, Google Analytics, Meta Ads
