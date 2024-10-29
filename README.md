@@ -50,8 +50,7 @@ const businessTools = {
 ## 🌐 Connect & Collaborate
 
 - 🖥️ Portfolio: [daveliew.com](https://daveliew.com)
-- 💼 LinkedIn: [Connect with me](https://linkedin.com/in/daveliew)
-- 📧 Email: [your@email.com](mailto:daveliew.com@domainsbyproxy.com)
+- 💼 LinkedIn: [daveliew](https://linkedin.com/in/daveliew)
 
 ## 🎓 Education & Certifications
 
