@@ -1,62 +1,40 @@
-# David Liew | Technology Strategist & Business Innovator 🚀
+# David Liew - Systems Implementation Pioneer 🧠×🤖
 
-> Bridging advanced technology and pragmatic business growth through AI-enhanced solutions and data-driven strategies.
+> Building at the intersection of Human Intelligence and AI. I ship in weeks what others plan for months.
 
-## 🎯 Core Focus Areas
+## 🎯 Human+AI Synthesis in Action
 
-- **Digital Innovation** - Implementing AI-driven solutions to amplify human-centric marketing strategies
-- **Startup Acceleration** - Orchestrating growth through lean methodologies and data-informed decision making
-- **Strategic Technology Integration** - Transforming business challenges into technological opportunities
+I'm ALL-IN on human-AI collaboration, using:
+- **Claude Desktop + Claude Code** for AI-powered development
+- **Cursor IDE** with Composer for 10x coding velocity  
+- **MCP Servers** for seamless AI-data integration
+- **CrewAI + n8n** for workflow automation
 
-## 💡 What I Do
+*Not just using AI tools - architecting human-AI systems that actually ship.*
 
-I help businesses navigate the intersection of technology and growth by:
-- Building scalable digital solutions that drive business outcomes
-- Implementing AI-enhanced marketing and automation systems
-- Crafting data-driven strategies for sustainable business growth
-- Developing custom tools for business intelligence and market analysis
+## 🚀 Currently Building
 
-## 🛠️ Technical Toolkit
+### [Agentic Brewery](https://agenticbrewery.com)
+AI implementation foundry - rapid prototyping meets strategic consulting. I build POCs in days that validate ideas, then scale what works. Sometimes this leads to fractional CTO engagements.
 
-### Programming & Development
+### [The Sustainability Service](https://thesustainabilityservice.com)
+AI-powered ESG assessment platform. Claude API + Vector Embeddings = actionable sustainability insights.
+
+### Active Client Work
+- **Ray of Joy Therapy** - AI-enhanced assessment tools + responsive web platform
+- **Enterprise AI Workshops** - Helping 1000+ employee companies architect human-AI collaboration
+- **Multiple SME MVPs** - From concept to production in weeks, not months
+
+## 💡 The Implementation Stack
+
 ```javascript
-const technicalSkills = {
-    languages: ['JavaScript', 'Python'],
-    frontEnd: ['React', 'HTML5/CSS3', 'Tailwind CSS'],
-    backEnd: ['Node.js', 'Express', 'Django'],
-    database: ['PostgreSQL', 'MySQL'],
-    cloud: ['AWS', 'Digital Ocean'],
-    ai: ['LangChain', 'OpenAI API', 'Claude API']
+const currentStack = {
+  ai: ['Claude API', 'OpenAI', 'MCP Servers', 'Vector DBs'],
+  development: ['Cursor IDE', 'Claude Desktop', 'Claude Code'],
+  web: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
+  backend: ['Supabase', 'PostgreSQL', 'Airtable'],
+  automation: ['n8n', 'Make.com', 'Zapier'],
+  deployment: ['Vercel', 'Netlify']
 }
-```
 
-### Business Tools & Platforms
-```javascript
-const businessTools = {
-    marketing: ['Google Analytics', 'Meta Ads', 'Google Ads'],
-    automation: ['Zapier', 'Make.com', 'GitHub Actions'],
-    crm: ['HubSpot', 'Salesforce'],
-    ecommerce: ['Shopify', 'WooCommerce'],
-    project: ['Notion', 'Trello', 'Asana']
-}
-```
-
-## 📈 Recent Projects
-
-- **AI-Enhanced Marketing Automation** - Custom solutions for small business lead generation
-- **Business Intelligence Dashboards** - Data visualization tools for strategic decision making
-- **E-commerce Optimization Systems** - Conversion rate optimization through behavioral analytics
-
-## 🌐 Connect & Collaborate
-
-- 🖥️ Portfolio: [daveliew.com](https://daveliew.com)
-- 💼 LinkedIn: [daveliew](https://linkedin.com/in/daveliew)
-
-## 🎓 Education & Certifications
-
-- Software Engineering Immersive, General Assembly (2021)
-- Google SquaredOnline (Digital Marketing Cert)
-
----
-
-> "Transforming technological complexity into market advantages through strategic implementation and continuous innovation."
+const philosophy = "Implementation > Theory. Always."
