@@ -1,40 +1,99 @@
-# David Liew - Systems Implementation Pioneer 🧠×🤖
+# David Liew - Agentic Engineer
 
-> Building at the intersection of Human Intelligence and AI. I ship in weeks what others plan for months.
+> Most people use AI to do more. I use it to do less—systematically.
 
-## 🎯 Human+AI Synthesis in Action
+Building human-AI collaboration systems through Context Engineering and the Three-Hat Framework
 
-I'm ALL-IN on human-AI collaboration, using:
-- **Claude Desktop + Claude Code** for AI-powered development
-- **Cursor IDE** with Composer for 10x coding velocity  
-- **MCP Servers** for seamless AI-data integration
-- **CrewAI + n8n** for workflow automation
+**Validated across 8+ projects including enterprise platforms, therapy practice automation, and e-commerce systems**
 
-*Not just using AI tools - architecting human-AI systems that actually ship.*
+---
 
-## 🚀 Currently Building
+## 🎯 Core Frameworks
 
-### [Agentic Brewery](https://agenticbrewery.com)
-AI implementation foundry - rapid prototyping meets strategic consulting. I build POCs in days that validate ideas, then scale what works. Sometimes this leads to fractional CTO engagements.
+### Context Engineering
+Not prompt engineering—architecting informational environments where understanding emerges
 
-### [The Sustainability Service](https://thesustainabilityservice.com)
-AI-powered ESG assessment platform. Claude API + Vector Embeddings = actionable sustainability insights.
+Shifting focus from 'what to say to AI' to 'what context enables effective reasoning'
 
-### Active Client Work
-- **Ray of Joy Therapy** - AI-enhanced assessment tools + responsive web platform
-- **Enterprise AI Workshops** - Helping 1000+ employee companies architect human-AI collaboration
-- **Multiple SME MVPs** - From concept to production in weeks, not months
+### Three-Hat Framework
+**Systems Architect:** High-level design preventing complexity explosion (3→12 agents without chaos)
+**Product Manager:** Data-driven prioritization (30min→2min user journey optimization)
+**Implementation:** Quality gates and monitoring for production systems
 
-## 💡 The Implementation Stack
+*Validated across enterprise, SME, and startup contexts*
+
+---
+
+## 🚀 Current Work
+
+### Client Projects
+- **[Ray of Joy Therapy](https://rayofjoytherapy.com)** - AI-enhanced assessment tools + operations automation
+  - *Prevented tool sprawl while automating client operations*
+- **[ODO (One Dollar Only)](https://onedollaronly.sg)** - Shopify e-commerce with advanced gift wizard and tiered pricing
+  - *Custom features for complex B2B gifting workflows*
+- **NTUC Digital Concierge** - Service recommendation engine for Singapore's largest union
+  - *11-dimension framework, 98.2% accuracy, production-ready*
+- **[Winborne](https://winborne.sg)** - Singapore waterproofing specialist website
+  - *Complete documentation + admin system for deployment*
+
+### Foundation Projects
+- **[Agentic Brewery](https://agenticbrewery.com)** - AI implementation consulting - from rapid prototypes to fractional technical leadership
+- **[The Sustainability Service](https://thesustainabilityservice.com)** - AI-powered ESG assessment platform (Claude API + Vector Embeddings)
+
+---
+
+## 📊 Proven Results
+
+- **Time Efficiency:** 1/3 reduction in market research delivery time
+- **UX Optimization:** 30min → 2min for first insights
+- **System Scaling:** 3 → 12 agents without complexity explosion
+- **Complexity Management:** Tool consolidation insights (69 → 10 tools experience)
+
+---
+
+## 💡 Implementation Stack
 
 ```javascript
 const currentStack = {
-  ai: ['Claude API', 'OpenAI', 'MCP Servers', 'Vector DBs'],
-  development: ['Cursor IDE', 'Claude Desktop', 'Claude Code'],
-  web: ['Next.js', 'React', 'TypeScript', 'Tailwind'],
-  backend: ['Supabase', 'PostgreSQL', 'Airtable'],
-  automation: ['n8n', 'Make.com', 'Zapier'],
-  deployment: ['Vercel', 'Netlify']
+  ai: ["Claude API","OpenAI","MCP Servers","Vector DBs"],
+  development: ["Cursor IDE","Claude Desktop","Claude Code"],
+  web: ["Next.js 15","React 19","TypeScript","Tailwind"],
+  backend: ["Supabase","PostgreSQL","Airtable"],
+  automation: ["n8n","CrewAI","LangChain"],
+  deployment: ["Vercel","Netlify"]
 }
 
-const philosophy = "Implementation > Theory. Always."
+const philosophy = "Validated patterns over theoretical frameworks. Ship, measure, iterate."
+```
+
+---
+
+## 🎓 Background
+
+**Professional Achievements:**
+- 4 ventures co-founded
+- S$1M+ revenue growth contributed across ventures
+- Michelin recognition (Labyrinth Restaurant)
+- 35% revenue growth at Nansen (web3 analytics)
+
+**Experience:**
+- Meta - Technical Solutions Consultant (AdTech implementation)
+- Nansen - Alpha Growth Ops (Blockchain data analytics)
+- SG Code Campus - Head of Business (EdTech)
+- General Assembly - Software Engineering Immersive
+
+---
+
+## 💬 Let's Connect
+
+**Available for AI engineering consulting and fractional technical leadership**
+
+- Human-AI collaboration system design
+- Rapid prototyping to production
+- Technical leadership and architecture
+
+📧 [Contact](https://agenticbrewery.com) | 🌐 [Portfolio](https://daveliew.dev) | 💼 [LinkedIn](https://www.linkedin.com/in/david-liew)
+
+---
+
+*This README is automatically synced from [professional-summary.json](./data/professional-summary.json). Last updated: 2025-11-12*
