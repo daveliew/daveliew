@@ -1,0 +1,109 @@
+{
+  "hero": {
+    "title": "David Liew - Agentic Engineer",
+    "hook": "Most people use AI to do more. I use it to do less—systematically.",
+    "subtitle": "Building human-AI collaboration systems through Context Engineering and the Three-Hat Framework",
+    "validation": "Validated across 8+ projects including enterprise platforms, therapy practice automation, and e-commerce systems"
+  },
+  "frameworks": {
+    "contextEngineering": {
+      "name": "Context Engineering",
+      "tagline": "Not prompt engineering—architecting informational environments where understanding emerges",
+      "description": "Shifting focus from 'what to say to AI' to 'what context enables effective reasoning'"
+    },
+    "threeHat": {
+      "name": "Three-Hat Framework",
+      "validated": "8+ projects",
+      "hats": {
+        "systemsArchitect": "High-level design preventing complexity explosion (3→12 agents without chaos)",
+        "productManager": "Data-driven prioritization (30min→2min user journey optimization)",
+        "implementation": "Quality gates and monitoring for production systems"
+      },
+      "contexts": "Validated across enterprise, SME, and startup contexts"
+    }
+  },
+  "featuredProjects": [
+    {
+      "name": "Ray of Joy Therapy",
+      "url": "https://rayofjoytherapy.com",
+      "description": "AI-enhanced assessment tools + operations automation",
+      "outcome": "Prevented tool sprawl while automating client operations",
+      "technologies": ["n8n", "OpenAI API", "Airtable", "Next.js"]
+    },
+    {
+      "name": "ODO (One Dollar Only)",
+      "url": "https://onedollaronly.sg",
+      "description": "Shopify e-commerce with advanced gift wizard and tiered pricing",
+      "outcome": "Custom features for complex B2B gifting workflows",
+      "technologies": ["Shopify Liquid", "JavaScript", "Custom Theme Development"]
+    },
+    {
+      "name": "NTUC Digital Concierge",
+      "url": null,
+      "description": "Service recommendation engine for Singapore's largest union",
+      "outcome": "11-dimension framework, 98.2% accuracy, production-ready",
+      "technologies": ["Next.js", "TypeScript", "Data Engineering", "Recommendation Systems"]
+    },
+    {
+      "name": "Winborne",
+      "url": "https://winborne.sg",
+      "description": "Singapore waterproofing specialist website",
+      "outcome": "Complete documentation + admin system for deployment",
+      "technologies": ["Next.js 15", "TypeScript", "Tailwind CSS"]
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Time Efficiency",
+      "value": "1/3 reduction in market research delivery time",
+      "context": "Autonomous research team implementation"
+    },
+    {
+      "label": "UX Optimization",
+      "value": "30min → 2min for first insights",
+      "context": "User journey redesign in research platform"
+    },
+    {
+      "label": "System Scaling",
+      "value": "3 → 12 agents without complexity explosion",
+      "context": "Modular architecture preventing chaos"
+    },
+    {
+      "label": "Complexity Management",
+      "value": "Tool consolidation insights (69 → 10 tools experience)",
+      "context": "Systematic approach to preventing tool sprawl"
+    }
+  ],
+  "techStack": {
+    "ai": ["Claude API", "OpenAI", "MCP Servers", "Vector DBs"],
+    "development": ["Cursor IDE", "Claude Desktop", "Claude Code"],
+    "web": ["Next.js 15", "React 19", "TypeScript", "Tailwind"],
+    "backend": ["Supabase", "PostgreSQL", "Airtable"],
+    "automation": ["n8n", "CrewAI", "LangChain"],
+    "deployment": ["Vercel", "Netlify"]
+  },
+  "philosophy": "Validated patterns over theoretical frameworks. Ship, measure, iterate.",
+  "foundationProjects": [
+    {
+      "name": "Agentic Brewery",
+      "url": "https://agenticbrewery.com",
+      "description": "AI implementation consulting - from rapid prototypes to fractional technical leadership"
+    },
+    {
+      "name": "The Sustainability Service",
+      "url": "https://thesustainabilityservice.com",
+      "description": "AI-powered ESG assessment platform (Claude API + Vector Embeddings)"
+    }
+  ],
+  "cta": {
+    "availability": "Available for AI engineering consulting and fractional technical leadership",
+    "services": [
+      "Human-AI collaboration system design",
+      "Rapid prototyping to production",
+      "Technical leadership and architecture"
+    ],
+    "portfolioUrl": "https://daveliew.dev",
+    "contactUrl": "https://agenticbrewery.com",
+    "linkedinUrl": "https://www.linkedin.com/in/david-liew"
+  }
+}

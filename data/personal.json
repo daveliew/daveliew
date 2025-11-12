@@ -1,0 +1,33 @@
+{
+  "virtuousCycle": {
+    "title": "The Virtuous Cycle",
+    "subtitle": "Build Time → Capture Knowledge → Create Wealth → Reinvest",
+    "description": "My life philosophy centers around creating a virtuous cycle where building time leads to capturing knowledge, which enables creating wealth, which gets reinvested into building more time. This isn't about accumulating for accumulation's sake, but about creating sustainable systems that amplify positive impact while maintaining balance and meaning.",
+    "phases": [
+      {
+        "title": "Build Time",
+        "description": "Create systems, automation, and efficiencies that give you back time and mental bandwidth.",
+        "examples": ["AI automation for routine tasks", "Streamlined business processes", "Passive income systems"],
+        "color": "time"
+      },
+      {
+        "title": "Capture Knowledge",
+        "description": "Use that time to learn, experiment, and build capabilities that compound over time.",
+        "examples": ["Deep learning in emerging technologies", "Building and testing new ideas", "Creating valuable content and resources"],
+        "color": "knowledge"
+      },
+      {
+        "title": "Create Wealth",
+        "description": "Transform knowledge and capabilities into sustainable value creation.",
+        "examples": ["Innovative products and services", "Scalable business models", "Strategic partnerships and investments"],
+        "color": "wealth"
+      },
+      {
+        "title": "Reinvest",
+        "description": "Deploy resources to amplify the cycle and create positive impact for others.",
+        "examples": ["Supporting other builders", "Funding meaningful projects", "Sharing knowledge and opportunities"],
+        "color": "time"
+      }
+    ]
+  }
+}
