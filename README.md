@@ -22,7 +22,7 @@ Architecting what AI knows before it reasons—not just prompts, but complete in
 **Client Projects**
 - **[Ray of Joy Therapy](https://rayofjoytherapy.com)** - AI-enhanced therapy practice tools
 - **[Agentic Brewery](https://agenticbrewery.ai)** - AI implementation consulting
-- **[NTUC Services Navigator](https://ntuc-navigator.vercel.app/))** - NTUC services recommendation engine
+- **[NTUC Services Navigator](https://ntuc-navigator.vercel.app/)** - NTUC services recommendation engine
 - **[The Sustainability Service](https://www.thesustainabilityservice.org)** - ESG assessment platform
 
 **Shipping**
