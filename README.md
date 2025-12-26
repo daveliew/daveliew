@@ -1,31 +1,40 @@
 # David Liew
 
-> Agentic AI Engineer with specialisation in Voice UI
+> Context Engineer | Voice UI & Agentic Systems Specialist
 
 ![Claude](https://img.shields.io/badge/Claude-API-orange) ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![TypeScript](https://img.shields.io/badge/TypeScript-blue) ![Supabase](https://img.shields.io/badge/Supabase-green) ![React](https://img.shields.io/badge/React-19-61DAFB)
 
 ---
 
-## 🎯 Three-Hat Framework
+## 🎯 Context Engineering
 
-- **Systems Architect:** High-level design and trade-offs
-- **Product Manager:** User needs and prioritization
-- **Implementation:** Code quality and shipping
+Architecting what AI knows before it reasons—not just prompts, but complete informational environments.
+
+**Multi-Role Fluency**: Rapid context switching across:
+- 🏗️ Systems Architect
+- 📊 Product Manager
+- 💻 Implementation
 
 ---
 
-## 🚀 Current Work
+## 🚀 2025 Highlights
 
+**Client Projects**
 - **[Ray of Joy Therapy](https://rayofjoytherapy.com)** - AI-enhanced therapy practice tools
 - **[Agentic Brewery](https://agenticbrewery.ai)** - AI implementation consulting
-- **[The Sustainability Service](https://www.thesustainabilityservice.org/service-page/tss-sst-sustainability-strategy-tool)** - ESG assessment platform
+- **[The Sustainability Service](https://www.thesustainabilityservice.org)** - ESG assessment platform
+
+**Shipping**
+- Voice AI experiments (ElevenLabs ecosystem)
+- Context engineering frameworks validated across 3 clients
+- Open source contributions & portfolio rebuilds
 
 ---
 
 ## 🔗 Where to Find Me
 
-- **[daveliew.com](https://daveliew.com)** - Philosophy, musings, AI journey
-- **[agenticbrewery.ai](https://agenticbrewery.ai)** - Work & consulting
+- **[daveliew.dev](https://daveliew.dev)** - AI Journey & Philosophy
+- **[agenticbrewery.ai](https://agenticbrewery.ai)** - Work & Consulting
 
 ---
 
