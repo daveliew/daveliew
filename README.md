@@ -1,44 +1,23 @@
 # David Liew
 
-> Context Engineer | Voice UI & Agentic Systems Specialist
+Business leader who builds AI solutions — ex-Meta
 
-![Claude](https://img.shields.io/badge/Claude-API-orange) ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![TypeScript](https://img.shields.io/badge/TypeScript-blue) ![Supabase](https://img.shields.io/badge/Supabase-green) ![React](https://img.shields.io/badge/React-19-61DAFB)
-
----
-
-## 🎯 Context Engineering
-
-Architecting what AI knows before it reasons—not just prompts, but complete informational environments.
-
-**Multi-Role Fluency**: Rapid context switching across:
-- 🏗️ Systems Architect
-- 📊 Product Manager
-- 💻 Implementation
+[![Website](https://img.shields.io/badge/daveliew.com-Visit-black)](https://daveliew.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/daveliew)
 
 ---
 
-## 🚀 2025 Highlights
+### What I Do
 
-**Client Projects**
-- **[Ray of Joy Therapy](https://rayofjoytherapy.com)** - AI-enhanced therapy practice tools
-- **[Agentic Brewery](https://agenticbrewery.ai)** - AI implementation consulting
-- **[NTUC Services Navigator](https://ntuc-navigator.vercel.app/)** - NTUC services recommendation engine
-- **[The Sustainability Service](https://www.thesustainabilityservice.org)** - ESG assessment platform
+I help businesses implement AI that actually ships. Context engineering, multi-agent systems, and turning ambiguity into working software.
 
-**Shipping**
-- Voice AI experiments (ElevenLabs ecosystem)
-- Context engineering frameworks validated across 3 clients
-- Open source contributions & portfolio rebuilds
+**Current projects:** [Agentic Brewery](https://agenticbrewery.ai) (consulting) · [Ray of Joy](https://rayofjoytherapy.com) (healthcare) · [TSS](https://www.thesustainabilityservice.org) (ESG)
 
 ---
 
-## 🔗 Where to Find Me
+### Stack
 
-- **[daveliew.com](https://daveliew.com)** - AI Journey & Philosophy
-- **[agenticbrewery.ai](https://agenticbrewery.ai)** - AI Voice Agents & AI and Web Consulting
+![Claude](https://img.shields.io/badge/Claude-API-orange) ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![TypeScript](https://img.shields.io/badge/TypeScript-blue) ![Supabase](https://img.shields.io/badge/Supabase-green)
 
 ---
 
-## 💬 Connect
-
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/daveliew)
+**Deep dive →** [daveliew.com](https://daveliew.com)
