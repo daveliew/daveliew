@@ -1,23 +1,21 @@
 # David Liew
 
-Business leader who builds AI solutions — ex-Meta
+Building at the intersection of AI and code
 
-[![Website](https://img.shields.io/badge/daveliew.com-Visit-black)](https://daveliew.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue)](https://www.linkedin.com/in/daveliew)
-
----
-
-### What I Do
-
-I help businesses implement AI that actually ships. Context engineering, multi-agent systems, and turning ambiguity into working software.
-
-**Current projects:** [Agentic Brewery](https://agenticbrewery.ai) (consulting) · [Ray of Joy](https://rayofjoytherapy.com) (healthcare) · [TSS](https://www.thesustainabilityservice.org) (ESG)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js) ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?logo=supabase&logoColor=white) ![Claude Code](https://img.shields.io/badge/Claude_Code-orange)
 
 ---
 
-### Stack
+### Currently exploring
 
-![Claude](https://img.shields.io/badge/Claude-API-orange) ![Next.js](https://img.shields.io/badge/Next.js-15-black) ![TypeScript](https://img.shields.io/badge/TypeScript-blue) ![Supabase](https://img.shields.io/badge/Supabase-green)
+- Context engineering & multi-agent orchestration
+- Voice AI (ElevenLabs) & multimodal (Gemini)
+- Shipping AI tools that solve real problems
+
+### Learning in public
+
+Check my pinned repos — experiments, hackathon projects, and production code.
 
 ---
 
-**Deep dive →** [daveliew.com](https://daveliew.com)
+[![Website](https://img.shields.io/badge/daveliew.com-black?style=flat-square)](https://daveliew.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daveliew)
