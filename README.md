@@ -1,21 +1,99 @@
-# David Liew
+# Dave Liew
 
-Building at the intersection of AI and code
+> Building AI-powered solutions for real businesses
 
-![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white) ![Next.js](https://img.shields.io/badge/Next.js-black?logo=next.js) ![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=black) ![Supabase](https://img.shields.io/badge/Supabase-3FCF8E?logo=supabase&logoColor=white) ![Claude Code](https://img.shields.io/badge/Claude_Code-orange)
+AI Implementation Consultant helping Singapore businesses ship faster with modern development practices
 
----
-
-### Currently exploring
-
-- Context engineering & multi-agent orchestration
-- Voice AI (ElevenLabs) & multimodal (Gemini)
-- Shipping AI tools that solve real problems
-
-### Learning in public
-
-Check my pinned repos — experiments, hackathon projects, and production code.
+**AI-first development for real businesses**
 
 ---
 
-[![Website](https://img.shields.io/badge/daveliew.com-black?style=flat-square)](https://daveliew.com) [![LinkedIn](https://img.shields.io/badge/LinkedIn-0A66C2?style=flat-square&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/daveliew)
+## 🎯 Core Frameworks
+
+### Context Engineering
+Right context, right time, right format
+
+Structured approach to AI-assisted development that treats context as the primary input. Better context = better AI outputs = faster shipping.
+
+### Three Hat Method
+**Systems Architect:** Design scalable, maintainable systems
+**Product Manager:** Prioritize ruthlessly, ship what matters
+**Implementation:** Write production code that works
+
+*Switching hats deliberately based on what the problem needs*
+
+---
+
+## 🚀 Current Work
+
+### Client Projects
+- **[NTUC Navigator](https://ntuc-navigator.vercel.app/)** - Employee benefits navigation tool built with AI-assisted development
+  - *Successful UAT with high usability scores*
+- **[One Dollar Only](https://onedollaronly.com.sg)** - Shopify migration and WhatsApp integration for family-run e-commerce
+  - *Improved operations and streamlined customer communication*
+- **[Ray of Joy Therapy](https://rayofjoytherapy.com/)** - Full-stack website with Airtable automation for speech therapy practice
+  - *Compliant solution the practice can grow with*
+- **[Winborne Waterproofing](https://winborne.com.sg)** - Modern website with content management for Singapore waterproofing specialist
+  - *Professional web presence with strong local SEO*
+- **[From Bar to Bricks](https://frombartobricks.com)** - AI-assisted rapid launch - from sync to .com in 3 hours
+  - *Live .com same day with SEO foundation and WhatsApp workflow*
+
+### Foundation Projects
+- **[Agentic Brewery](https://agenticbrewery.ai)** - AI-first consultancy offering dual-track services: AI Employee (async, full ownership) and Fractional CTO (sync, advisory)
+
+---
+
+## 📊 Proven Results
+
+- **Client Projects Shipped:** 10+ production launches
+- **Fastest Delivery:** Idea to .com in 3 hours
+- **Stack:** Next.js, React, TypeScript, Supabase, Claude
+
+---
+
+## 💡 Implementation Stack
+
+```javascript
+const currentStack = {
+  ai: ["Claude","GPT-4","Cursor","Claude Code"],
+  development: ["TypeScript","React","Next.js 15"],
+  web: ["Tailwind CSS","Radix UI","Vercel"],
+  backend: ["Supabase","PostgreSQL","Airtable"],
+  automation: ["n8n","Zapier","WhatsApp API"],
+  deployment: ["Vercel","GitHub Actions","Cloudflare"]
+}
+
+const philosophy = "Ship production code, not prototypes. AI accelerates everything when you give it the right context."
+```
+
+---
+
+## 🎓 Background
+
+**Professional Achievements:**
+- 4 ventures co-founded
+- S$1M+ revenue growth contributed across ventures
+- Michelin recognition (Labyrinth Restaurant)
+- 35% revenue growth at Nansen (web3 analytics)
+
+**Experience:**
+- Meta - Technical Solutions Consultant (AdTech implementation)
+- Nansen - Alpha Growth Ops (Blockchain data analytics)
+- SG Code Campus - Head of Business (EdTech)
+- General Assembly - Software Engineering Immersive
+
+---
+
+## 💬 Let's Connect
+
+**Limited availability for new projects**
+
+- AI Implementation - Claude/GPT integrations, RAG systems, automation
+- Fractional CTO - Technical strategy and architecture guidance
+- Full-Stack Development - Next.js, React, Supabase projects
+
+📧 [Contact](mailto:dave@agenticbrewery.ai) | 🌐 [Portfolio](https://daveliew.com) | 💼 [LinkedIn](https://linkedin.com/in/daveliew)
+
+---
+
+*This README is automatically synced from [professional-summary.json](./data/professional-summary.json). Last updated: 2026-01-19*

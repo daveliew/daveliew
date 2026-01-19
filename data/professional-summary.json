@@ -1,0 +1,97 @@
+{
+  "hero": {
+    "title": "Dave Liew",
+    "hook": "Building AI-powered solutions for real businesses",
+    "subtitle": "AI Implementation Consultant helping Singapore businesses ship faster with modern development practices",
+    "validation": "AI-first development for real businesses"
+  },
+  "frameworks": {
+    "contextEngineering": {
+      "name": "Context Engineering",
+      "tagline": "Right context, right time, right format",
+      "description": "Structured approach to AI-assisted development that treats context as the primary input. Better context = better AI outputs = faster shipping."
+    },
+    "threeHat": {
+      "name": "Three Hat Method",
+      "hats": {
+        "systemsArchitect": "Design scalable, maintainable systems",
+        "productManager": "Prioritize ruthlessly, ship what matters",
+        "implementation": "Write production code that works"
+      },
+      "contexts": "Switching hats deliberately based on what the problem needs"
+    }
+  },
+  "featuredProjects": [
+    {
+      "name": "NTUC Navigator",
+      "url": "https://ntuc-navigator.vercel.app/",
+      "description": "Employee benefits navigation tool built with AI-assisted development",
+      "outcome": "Successful UAT with high usability scores"
+    },
+    {
+      "name": "One Dollar Only",
+      "url": "https://onedollaronly.com.sg",
+      "description": "Shopify migration and WhatsApp integration for family-run e-commerce",
+      "outcome": "Improved operations and streamlined customer communication"
+    },
+    {
+      "name": "Ray of Joy Therapy",
+      "url": "https://rayofjoytherapy.com/",
+      "description": "Full-stack website with Airtable automation for speech therapy practice",
+      "outcome": "Compliant solution the practice can grow with"
+    },
+    {
+      "name": "Winborne Waterproofing",
+      "url": "https://winborne.com.sg",
+      "description": "Modern website with content management for Singapore waterproofing specialist",
+      "outcome": "Professional web presence with strong local SEO"
+    },
+    {
+      "name": "From Bar to Bricks",
+      "url": "https://frombartobricks.com",
+      "description": "AI-assisted rapid launch - from sync to .com in 3 hours",
+      "outcome": "Live .com same day with SEO foundation and WhatsApp workflow"
+    }
+  ],
+  "foundationProjects": [
+    {
+      "name": "Agentic Brewery",
+      "url": "https://agenticbrewery.ai",
+      "description": "AI-first consultancy offering dual-track services: AI Employee (async, full ownership) and Fractional CTO (sync, advisory)"
+    }
+  ],
+  "metrics": [
+    {
+      "label": "Client Projects Shipped",
+      "value": "10+ production launches"
+    },
+    {
+      "label": "Fastest Delivery",
+      "value": "Idea to .com in 3 hours"
+    },
+    {
+      "label": "Stack",
+      "value": "Next.js, React, TypeScript, Supabase, Claude"
+    }
+  ],
+  "techStack": {
+    "ai": ["Claude", "GPT-4", "Cursor", "Claude Code"],
+    "development": ["TypeScript", "React", "Next.js 15"],
+    "web": ["Tailwind CSS", "Radix UI", "Vercel"],
+    "backend": ["Supabase", "PostgreSQL", "Airtable"],
+    "automation": ["n8n", "Zapier", "WhatsApp API"],
+    "deployment": ["Vercel", "GitHub Actions", "Cloudflare"]
+  },
+  "philosophy": "Ship production code, not prototypes. AI accelerates everything when you give it the right context.",
+  "cta": {
+    "availability": "Limited availability for new projects",
+    "services": [
+      "AI Implementation - Claude/GPT integrations, RAG systems, automation",
+      "Fractional CTO - Technical strategy and architecture guidance",
+      "Full-Stack Development - Next.js, React, Supabase projects"
+    ],
+    "contactUrl": "mailto:dave@agenticbrewery.ai",
+    "portfolioUrl": "https://daveliew.com",
+    "linkedinUrl": "https://linkedin.com/in/daveliew"
+  }
+}
