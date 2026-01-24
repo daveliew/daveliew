@@ -147,15 +147,64 @@ Quick reference for terms in PREP-GUIDE.md.
 | **Secure flag** | Cookie only sent over HTTPS |
 | **SameSite flag** | Controls if cookie is sent on cross-site requests (CSRF protection) |
 
-### Google-Specific
+### Google Measurement Stack
 
 | Term | Definition |
 |------|------------|
 | **GTM** | Google Tag Manager - UI for adding tracking code to websites |
 | **Container** | A GTM package of tags, triggers, and variables for a website |
+| **Web Container** | GTM container running client-side in browser |
+| **Server Container** | GTM container running on Cloud Run (GCP) as first-party endpoint |
 | **Tag** | A piece of code GTM fires (e.g., Google Analytics tracking) |
 | **Trigger** | Condition for when a tag fires (e.g., on page load, on click) |
 | **Conversion Action** | What you're measuring as success (purchase, signup, etc.) |
+| **GA4** | Google Analytics 4 - event-based analytics (replaced Universal Analytics) |
+| **gtag.js** | Google's JavaScript library for tracking (the Google Tag) |
+| **Measurement ID** | GA4 property identifier (format: G-XXXXXXX) |
+| **gclid** | Google Click ID - tracks which ad click led to a conversion |
+| **dataLayer** | JavaScript array where GTM reads event/variable data |
+
+### Enhanced Conversions & Consent
+
+| Term | Definition |
+|------|------------|
+| **Enhanced Conversions** | Sends hashed customer data (email, phone) to improve conversion matching |
+| **Enhanced Conversions for Web** | Real-time matching on conversion pages (e-commerce) |
+| **Enhanced Conversions for Leads** | Delayed matching via offline import (lead-gen) |
+| **Consent Mode** | Google's framework for adjusting tag behavior based on user consent |
+| **ad_storage** | Consent signal for advertising cookies |
+| **analytics_storage** | Consent signal for analytics cookies |
+| **Behavioral modeling** | ML that fills gaps when users deny consent (requires volume thresholds) |
+| **SHA256** | Hash algorithm used to encrypt PII before sending to Google |
+
+### Server-Side Tagging
+
+| Term | Definition |
+|------|------------|
+| **Server-side GTM** | GTM running on your own server instead of user's browser |
+| **Cloud Run** | GCP service that runs server containers (hosts server-side GTM) |
+| **First-party domain** | Your own domain (e.g., sgtm.yoursite.com) - cookies last longer |
+| **ITP** | Intelligent Tracking Prevention - Safari's cookie restrictions |
+| **ETP** | Enhanced Tracking Protection - Firefox's cookie restrictions |
+
+### Attribution
+
+| Term | Definition |
+|------|------------|
+| **Attribution** | Deciding which touchpoint gets credit for a conversion |
+| **Last-click attribution** | 100% credit to final touchpoint before conversion |
+| **Data-Driven Attribution (DDA)** | ML distributes credit across touchpoints (Google Ads default since 2021) |
+| **Cross-channel attribution** | Sees all traffic sources (GA4 approach) |
+| **Platform-centric attribution** | Only sees own touchpoints (Meta/Facebook approach) |
+
+### Google Ads Terms
+
+| Term | Definition |
+|------|------------|
+| **MCC** | My Client Center - manager account that controls multiple Google Ads accounts |
+| **MCA** | Multi-Client Account - Merchant Center equivalent of MCC |
+| **Performance Max** | Automated campaign type across all Google inventory |
+| **Key Event** | GA4 term for important events (formerly "conversions" in GA4) |
 
 ---
 
@@ -179,4 +228,4 @@ Availability = uptime / (uptime + downtime)
 
 ---
 
-*Use this alongside PREP-GUIDE.md for your 5-day prep.*
+*Use alongside PREP-GUIDE.md, GTECH-ROLE-GUIDE.md, and PEOPLE-SKILLS.md for your 5-day prep.*

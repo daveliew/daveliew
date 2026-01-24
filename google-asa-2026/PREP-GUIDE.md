@@ -232,6 +232,12 @@ Always say: "Here's one approach, but alternative is X based on Y trade-off"
 
 ## Resources
 
+**Your Study Files:**
+- `GLOSSARY.md` - Technical term definitions
+- `GTECH-ROLE-GUIDE.md` - Role-specific depth, L4 vs L3, Meta→Google translations
+- `PEOPLE-SKILLS.md` - Stakeholder management, "I don't know" framework, story bank
+
+**External:**
 - [System Design Handbook - L4 Guide](https://www.systemdesignhandbook.com/guides/google-l4-system-design/)
 - [IGotAnOffer - Google L4 Guide](https://igotanoffer.com/en/advice/google-l4-interview)
 - Google-tagged LeetCode (medium difficulty)
