@@ -332,7 +332,7 @@ This is a **strong SA profile**. The coaching is about sharpening delivery, not 
 
 ## Future Scenarios to Create
 
-- [ ] **Web-to-App Bridging** - Deferred deep links, msite as app download conduit, cross-surface attribution. Plays to web tech strength. Use for "complex measurement challenge" questions.
+- [x] **Web-to-App Bridging** - Created! See `scenarios/web-to-app-bridging.md`
 
 ---
 
