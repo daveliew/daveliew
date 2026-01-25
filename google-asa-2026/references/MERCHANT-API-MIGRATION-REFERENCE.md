@@ -31,6 +31,273 @@ The Merchant API is Google's redesigned replacement for the Content API for Shop
 
 ---
 
+## For Account Managers: Client Communication Guide
+
+### The 30-Second Pitch
+
+> "Google is replacing the Content API with the Merchant API in August 2026. Your current integration will stop working after that date. We recommend starting migration now - this gives us buffer for testing without risking your Shopping ads revenue during peak season."
+
+### Business Impact Summary
+
+| If You Migrate | If You Don't Migrate |
+|----------------|---------------------|
+| Shopping ads continue running | Shopping ads stop serving |
+| Product feeds keep updating | Products go stale, get disapproved |
+| New features available (AI, better tracking) | Locked out of improvements |
+| Controlled, tested transition | Emergency scramble or outage |
+
+**Bottom line**: No migration = no Shopping ads after August 2026.
+
+### Common Client Objections & Responses
+
+**Q: "Can we wait until closer to the deadline?"**
+> "You could, but here's the risk: if we discover issues during migration, we need time to fix them. Starting with 7 months buffer means we can test thoroughly. Starting with 2 months means one bug could impact your peak season revenue."
+
+**Q: "How much engineering time does this need?"**
+> "It depends on your setup complexity. A simple integration might be 2-3 weeks. If you have custom middleware, multi-market feeds, or heavy batch processing, plan for 6-8 weeks plus testing. We can do a quick audit to give you a more accurate estimate."
+
+**Q: "What's the actual risk if we're a bit late?"**
+> "After August 2026, Content API calls will fail. Your products won't update, new products won't upload, and existing products will eventually get disapproved as data goes stale. This directly impacts your Shopping ads serving and revenue."
+
+**Q: "Is Google likely to extend the deadline?"**
+> "Historically, Google has held firm on API deprecation dates. The safe assumption is August 2026 is final. Planning for an extension that doesn't come is much riskier than being ready early."
+
+### Effort Sizing Guide (For Scoping Conversations)
+
+| Client Setup | Complexity | Rough Effort |
+|--------------|------------|--------------|
+| Simple feed upload, single market | Low | 2-3 weeks |
+| API integration, 2-3 markets | Medium | 4-6 weeks |
+| Custom middleware, batch processing | Medium-High | 6-8 weeks |
+| Enterprise (50K+ SKUs, 5+ markets, real-time inventory) | High | 8-12 weeks |
+
+*Note: Add 2-4 weeks for testing and staged rollout regardless of complexity.*
+
+---
+
+## Quick Start for Developers (15 Minutes)
+
+### Step 1: Get Your IDs Ready
+```
+Merchant Center ID: Find in Merchant Center → Settings → Account information
+GCP Project ID: Find in Google Cloud Console
+```
+
+### Step 2: Register as Merchant API Developer
+```bash
+curl -X POST \
+  "https://merchantapi.googleapis.com/accounts/v1/accounts/{MC_ID}/developerRegistration:registerGcp" \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)" \
+  -H "Content-Type: application/json" \
+  -d '{"developer_email": "your-email@company.com"}'
+```
+
+### Step 3: Test a Simple Product GET
+```bash
+# Content API (old way)
+curl "https://shoppingcontent.googleapis.com/content/v2.1/{MC_ID}/products/online:en:US:sku123" \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)"
+
+# Merchant API (new way)
+curl "https://merchantapi.googleapis.com/products/v1/accounts/{MC_ID}/products/en~US~sku123" \
+  -H "Authorization: Bearer $(gcloud auth print-access-token)"
+```
+
+### Step 4: Compare Responses
+
+**What to look for:**
+- [ ] Product ID format changed (`:` → `~`)
+- [ ] Price now in `amountMicros` (not string)
+- [ ] Attributes nested under `productAttributes`
+- [ ] Status info included (no separate call needed)
+
+**If both calls work**: Your auth is set up, you're ready to plan migration.
+**If Merchant API fails**: Check error message, likely need to register as developer first.
+
+### Minimum Viable Test
+
+```javascript
+// Quick validation: Can you read and write one product?
+async function quickMigrationTest(productId) {
+  // 1. Read from Content API
+  const oldProduct = await contentApi.products.get(productId);
+
+  // 2. Transform to new format
+  const newProduct = transformProduct(oldProduct);
+
+  // 3. Write to Merchant API
+  const result = await merchantApi.productInputs.insert(newProduct);
+
+  // 4. Verify
+  console.log('Content API price:', oldProduct.price.value);
+  console.log('Merchant API price:', result.amountMicros / 1000000);
+
+  return oldProduct.price.value === (result.amountMicros / 1000000).toFixed(2);
+}
+```
+
+---
+
+## Risk Assessment Matrix
+
+### Business Risk Summary
+
+| Risk | Likelihood | Business Impact | Technical Impact | Mitigation |
+|------|------------|-----------------|------------------|------------|
+| **Missed deadline** | Medium | Critical - ads stop | API calls fail | Start now, phased approach |
+| **Data loss during migration** | Low | High - products disapproved | Data inconsistency | Shadow traffic validation |
+| **Revenue impact from disapprovals** | Medium | High - lost sales | Products not serving | Staged rollout, start with top SKUs |
+| **Extended downtime during cutover** | Low | Medium - temporary gap | Service interruption | Kill switch, rollback plan |
+| **Custom attribute migration fails** | Medium | Medium - some products affected | Validation errors | Pre-migration audit |
+| **Batch processing bottleneck** | Medium | Low - slower updates | Performance degradation | Async refactor, load testing |
+
+### Risk by Client Profile
+
+| Client Type | Highest Risk | Priority Mitigation |
+|-------------|--------------|---------------------|
+| **Enterprise (50K+ SKUs)** | Scale issues, batch processing | Load test early, parallel migration |
+| **Multi-market** | ID format across regions | Market-by-market rollout |
+| **Real-time inventory** | Latency, data freshness | Shadow traffic with live comparison |
+| **Heavy custom attributes** | Data transformation | Pre-migration attribute audit |
+| **Simple feed upload** | Low risk overall | Standard migration path |
+
+### Success Criteria (Definition of Done)
+
+Migration is complete when:
+
+- [ ] All products successfully migrated (0% on Content API)
+- [ ] Approval rates match or exceed pre-migration baseline
+- [ ] No increase in disapprovals for 7 consecutive days
+- [ ] All markets serving correctly
+- [ ] Monitoring and alerting in place for new API
+- [ ] Rollback procedure documented and tested
+- [ ] Team trained on new API patterns
+- [ ] Content API code paths removed from codebase
+
+---
+
+## Shadow Traffic Strategy: Top SKU Approach
+
+### Why Start with Top-Selling SKUs
+
+Instead of random sampling, prioritize your highest-value products for shadow testing:
+
+```
+TRADITIONAL APPROACH (RISKY)
+============================
+Random 1% of products → Test → Expand
+
+Problem: You might test low-value SKUs that work fine,
+         then discover your top sellers have edge cases
+         that break during full rollout.
+
+TOP-SKU APPROACH (RECOMMENDED)
+==============================
+Top 100 revenue SKUs → Test → Top 1000 → Full catalog
+
+Why:
+├── Highest revenue impact if they break
+├── Often most complex (more attributes, more markets)
+├── Validates your most critical products first
+└── If these work, simpler products likely work too
+```
+
+### Implementation
+
+**Step 1: Identify Your Top SKUs**
+```sql
+-- Pull from your analytics/sales data
+SELECT
+  product_id,
+  revenue_last_30d,
+  order_count,
+  num_markets,
+  num_custom_attributes
+FROM products
+ORDER BY revenue_last_30d DESC
+LIMIT 100;
+```
+
+**Step 2: Shadow Traffic with Top SKUs First**
+```javascript
+async function shadowTrafficTopSKUs() {
+  // Get your top 100 revenue SKUs
+  const topSKUs = await getTopSKUsByRevenue(100);
+
+  const results = {
+    matched: [],
+    mismatched: [],
+    failed: []
+  };
+
+  for (const sku of topSKUs) {
+    try {
+      // Send to both APIs
+      const [contentResult, merchantResult] = await Promise.all([
+        contentApi.products.insert(sku),
+        merchantApi.productInputs.insert(transformProduct(sku))
+      ]);
+
+      // Compare approval status
+      if (contentResult.approved === merchantResult.approved) {
+        results.matched.push(sku.id);
+      } else {
+        results.mismatched.push({
+          id: sku.id,
+          revenue: sku.revenue,
+          contentStatus: contentResult.approved,
+          merchantStatus: merchantResult.approved
+        });
+      }
+    } catch (error) {
+      results.failed.push({ id: sku.id, error: error.message });
+    }
+  }
+
+  // Alert if ANY top SKU fails
+  if (results.failed.length > 0 || results.mismatched.length > 0) {
+    alertTeam('Top SKU shadow traffic issues detected', results);
+  }
+
+  return results;
+}
+```
+
+**Step 3: Expand Based on Results**
+
+| Phase | SKUs to Test | Success Criteria | Next Step |
+|-------|--------------|------------------|-----------|
+| 1 | Top 100 by revenue | 100% match | Expand to top 1000 |
+| 2 | Top 1000 by revenue | 99%+ match | Expand to full catalog |
+| 3 | Full catalog (sampling) | 99%+ match | Begin staged cutover |
+| 4 | Full cutover by market | No disapproval spike | Complete |
+
+### Why This Matters
+
+**Scenario A: Random sampling first**
+- Test 1000 random products ✓
+- All pass ✓
+- Roll out to production
+- Top 10 revenue SKUs fail due to edge case
+- **Revenue impact: Immediate, high**
+
+**Scenario B: Top SKUs first**
+- Test top 100 revenue products
+- Discover edge case in product #47
+- Fix before broader rollout
+- **Revenue impact: Zero (caught in testing)**
+
+### Key Metrics to Track During Shadow Traffic
+
+| Metric | Top SKUs Threshold | General Threshold |
+|--------|-------------------|-------------------|
+| Approval match rate | 100% required | 99%+ |
+| Price accuracy | 100% required | 99.9%+ |
+| Custom attribute preservation | 100% required | 99%+ |
+| Response time delta | < 50ms | < 100ms |
+
+---
+
 ## Breaking Changes Reference
 
 ### High Impact (Requires Code Changes)
