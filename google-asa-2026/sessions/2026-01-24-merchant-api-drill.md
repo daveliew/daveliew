@@ -332,7 +332,108 @@ This is a **strong SA profile**. The coaching is about sharpening delivery, not 
 
 ## Future Scenarios to Create
 
-- [x] **Web-to-App Bridging** - Created! See `scenarios/web-to-app-bridging.md`
+- [x] **Web-to-App Bridging** - Created and drilled! See `scenarios/web-to-app-bridging.md`
+
+---
+
+## Web-to-App Bridging Drill
+
+### Turn 1: Investigating Attribution Gap
+
+**Interviewer**: "The marketing lead says their app install campaigns show low conversion rates, but anecdotally they hear users saying 'I found you on Google.' Where would you start?"
+
+**My Clarifying Questions**:
+> 1. iOS or Android? % split?
+> 2. Are they using MMP and does that show different data?
+> 3. What sort of app install campaign?
+> 4. What's their conversion event?
+
+**Coaching Feedback**:
+- ✓ Good: iOS vs Android is smart (ATT changes everything), MMP as comparison source, campaign type matters
+- △ Improve: Also ask "Is Firebase linked to Google Ads?" - often the first thing broken
+
+### Turn 2: Firebase → Google Ads Integration
+
+**Interviewer**: "gclid IS reaching Firebase on Android, but Google Ads isn't showing conversions. What's happening?"
+
+**My Response**:
+> Check docs for syntax/implementation, but theoretically: check campaign_id passed, Firebase ↔ Ads link working (user permissions, API permissions), attribution settings align.
+
+**Coaching Feedback**:
+- ✓ Good: Correct area (Firebase ↔ Ads link), honest about needing docs
+- △ Improve: The pipeline is LINK → MARK (Key Events) → IMPORT (Conversion Actions). Not "campaign_id" - gclid is what matters.
+
+**Key Learning**: Firebase → Google Ads pipeline:
+```
+1. LINK      Firebase project ↔ Google Ads account
+2. MARK      Events as "Key Events" in GA4/Firebase
+3. IMPORT    Conversion actions in Google Ads
+```
+
+### Turn 3: Deferred Deep Linking
+
+**Interviewer**: "How does a user click Shopping Ad, install app, and land on specific product page (not home)?"
+
+**My Questions**:
+> Asked for ASCII diagram to understand the flow. Clarified that Firebase Dynamic Links isn't the only solution - AppsFlyer OneLink, Branch also do deferred deep linking.
+
+**Coaching Feedback**:
+- ✓ Good: Understood that deferred deep linking is a concept, not a single product
+- ✓ Good: Connected to client's existing AppsFlyer setup
+
+### Turn 4: Measurement Architecture
+
+**Interviewer**: "We want ONE dashboard showing ROAS across web and app. How?"
+
+**My Response**:
+> Client's own SOT via inhouse BI is best. Minimize discrepancy, 1P data is key, ATT disruption is real.
+
+**Coaching Feedback**:
+- ✓ Good: Instincts correct (BigQuery unification, 1P data, industry trends)
+- △ Improve: Structure as OPTIONS → TRADE-OFFS → RECOMMENDATION → EXPECTATION
+
+**Key Learning**: Three options for unified reporting:
+1. GA4 as hub (native but numbers won't match Google Ads)
+2. BigQuery unification (full control, engineering effort)
+3. Keep separate SOTs, blend in dashboard (pragmatic but manual)
+
+### Turn 5: Stakeholder Pushback
+
+**Interviewer**: "Why can't we just trust Google Ads numbers? This sounds expensive."
+
+**My Response**:
+> Explained gTech partnership, PSPs, JTP, profit-bidding, listed discrepancy drivers (DDA, EVC vs CTC), mentioned OCI for alignment.
+
+**Coaching Feedback**:
+- ✓ Good: Strong domain knowledge (DDA, EVC, CTC, OCI, tROAS)
+- △ Improve: Too much jargon for frustrated stakeholder. Pattern: EMPATHIZE → SIMPLIFY → REFRAME → OFFER PATH
+
+**Key Learning**: When stakeholder is frustrated:
+- Empathize first ("I hear you")
+- Simplify (no acronyms)
+- Reframe cost as investment
+- Offer ONE clear next step
+
+### Turn 6: Synthesis
+
+**Interviewer**: "One piece of advice to improve their web-to-app measurement?"
+
+**My Response**:
+> Verify Firebase-Google Ads link is working first.
+
+**Coaching Feedback**:
+- ✓ Nailed it: Concise, foundational, first-principles thinking
+
+---
+
+## W2A Drill Key Takeaways
+
+1. **iOS vs Android** = fundamentally different attribution realities (ATT)
+2. **Firebase → Google Ads pipeline**: LINK → MARK → IMPORT
+3. **Deferred deep linking** = concept (Firebase, AppsFlyer, Branch all do it)
+4. **"One number" doesn't exist** - help clients choose trade-offs
+5. **Empathize → Simplify → Reframe → Offer path** for frustrated stakeholders
+6. **Synthesis**: ONE answer with conviction, no hedging
 
 ---
 
