@@ -293,6 +293,43 @@ This is a **strong SA profile**. The coaching is about sharpening delivery, not 
 
 ---
 
+## Bonus Turn: Test Strategy Design (Gmail E2E)
+
+**Interviewer**: "How would you design end-to-end integration, load/performance, and security tests for a real-world system like Gmail?"
+
+**My Clarifying Questions**:
+> 1. Is there a priority of the three topics - e2e, load/performance, security?
+> 2. Is the end user consumer or enterprise?
+> 3. Is there a deadline to meet?
+
+**My Approach**:
+> Consumer needs: speed, trust (data security + consistent functionality), value (free vs paid)
+>
+> Proposed e2e use case: compose → send → receive → reply
+>
+> Scope: single country, user-to-user (not groups)
+>
+> Trade-off: broad/macro (multiple users, general) vs deep dive (1:1 interaction)
+
+**My Test Design**:
+> Test case matrix:
+> - Compose: user launches new email, adds params (title, body, address)
+> - Send: CTA invokes send, API generates POST to server
+> - Receive: data not mutated, timestamp confirmation
+> - Reply: idempotent in 1:1 setting
+>
+> Infrastructure: 3 phases - API routes first, then client-API-server integration, then full e2e sample email
+>
+> Failure modes: chronology via timestamps, diff check on strings, deliberate wrong email for expected failure
+
+**Coaching Feedback**:
+- ✓ Good: Clarifying questions, scoping instinct, 3-phase layered approach, negative testing, honest about gaps
+- △ Improve: Label assertions explicitly, mention test data/cleanup, sharpen "idempotent" usage
+
+**Key Learning**: Assertions = the specific checks you make (response code 200, body matches, timestamp within SLA). Also mention test accounts + cleanup for production credibility.
+
+---
+
 ## Future Scenarios to Create
 
 - [ ] **Web-to-App Bridging** - Deferred deep links, msite as app download conduit, cross-surface attribution. Plays to web tech strength. Use for "complex measurement challenge" questions.
