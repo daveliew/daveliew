@@ -2,7 +2,9 @@
 
 **For**: Sales Engineers, Solutions Architects, Client Technical Teams
 **Last Updated**: January 2026
-**Source**: [Google Merchant API Documentation](https://developers.google.com/merchant/api/guides/compatibility/overview)
+**Sources**:
+- [Google Merchant API Documentation](https://developers.google.com/merchant/api/guides/compatibility/overview)
+- Industry best practices from Stripe, Shopify, Twilio, Google Places API
 
 ---
 
@@ -305,6 +307,173 @@ async function shadowTest(product) {
 
 ---
 
+## Complete Endpoint Mapping (Twilio-Style)
+
+Full mapping of every Content API endpoint to Merchant API equivalent:
+
+### Products Service
+
+| Content API Endpoint | Merchant API Endpoint | Notes |
+|---------------------|----------------------|-------|
+| `GET /v2.1/{merchantId}/products/{productId}` | `GET /products/v1/accounts/{account}/products/{product}` | Returns processed product with status |
+| `GET /v2.1/{merchantId}/products` | `GET /products/v1/accounts/{account}/products` | Pagination: max 1000 vs 250 |
+| `POST /v2.1/{merchantId}/products` | `POST /products/v1/accounts/{account}/productInputs:insert` | Requires `dataSource` param |
+| `PATCH /v2.1/{merchantId}/products/{productId}` | `PATCH /products/v1/accounts/{account}/productInputs/{productinput}` | Now persistent (not overwritten by feeds) |
+| `DELETE /v2.1/{merchantId}/products/{productId}` | `DELETE /products/v1/accounts/{account}/productInputs/{productinput}` | Requires `dataSource` param |
+| `POST /v2.1/products/batch` | **REMOVED** | Use async parallel calls |
+| `POST /v2.1/products/custombatch` | **REMOVED** | Use async parallel calls |
+
+### Product Statuses Service
+
+| Content API Endpoint | Merchant API Endpoint | Notes |
+|---------------------|----------------------|-------|
+| `GET /v2.1/{merchantId}/productstatuses/{productId}` | `GET /products/v1/accounts/{account}/products/{product}` | Status now in `productStatus` field |
+| `GET /v2.1/{merchantId}/productstatuses` | `GET /products/v1/accounts/{account}/products` | Status included in list response |
+| `POST /v2.1/productstatuses/custombatch` | **REMOVED** | Use async parallel calls |
+
+### Data Sources (formerly Datafeeds)
+
+| Content API Endpoint | Merchant API Endpoint | Notes |
+|---------------------|----------------------|-------|
+| `POST /v2.1/{merchantId}/datafeeds` | `POST /datasources/v1/accounts/{account}/dataSources` | Method renamed to `create` |
+| `GET /v2.1/{merchantId}/datafeeds/{datafeedId}` | `GET /datasources/v1/accounts/{account}/dataSources/{datasource}` | ID format: numeric → string name |
+| `GET /v2.1/{merchantId}/datafeeds` | `GET /datasources/v1/accounts/{account}/dataSources` | |
+| `PUT /v2.1/{merchantId}/datafeeds/{datafeedId}` | `PATCH /datasources/v1/accounts/{account}/dataSources/{datasource}` | Changed from PUT to PATCH |
+| `DELETE /v2.1/{merchantId}/datafeeds/{datafeedId}` | `DELETE /datasources/v1/accounts/{account}/dataSources/{datasource}` | |
+| `POST /v2.1/{merchantId}/datafeeds/{datafeedId}/fetchnow` | `POST /datasources/v1/accounts/{account}/dataSources/{datasource}:fetch` | |
+| `GET /v2.1/{merchantId}/datafeedstatuses/{datafeedId}` | `GET /datasources/v1/accounts/{account}/dataSources/{datasource}/fileUploads/latest` | Separate resource now |
+| `GET /v2.1/{merchantId}/datafeedstatuses` | **NO DIRECT EQUIVALENT** | List sources, then get each fileUpload |
+| `POST /v2.1/datafeeds/custombatch` | **REMOVED** | Use async parallel calls |
+
+### Inventory Services
+
+| Content API Endpoint | Merchant API Endpoint | Notes |
+|---------------------|----------------------|-------|
+| `POST /v2.1/{merchantId}/inventory/{storeCode}/products/{productId}` | `POST /inventories/v1/accounts/{account}/products/{product}/localInventories:insert` | New resource structure |
+| `POST /v2.1/{merchantId}/pos/{targetMerchantId}/inventory` | `POST /inventories/v1/accounts/{account}/products/{product}/localInventories:insert` | |
+| Regional inventory | `POST /inventories/v1/accounts/{account}/products/{product}/regionalInventories:insert` | New in Merchant API |
+
+### Accounts Service
+
+| Content API Endpoint | Merchant API Endpoint | Notes |
+|---------------------|----------------------|-------|
+| `GET /v2.1/{merchantId}/accounts/{accountId}` | `GET /accounts/v1/accounts/{account}` | |
+| `GET /v2.1/{merchantId}/accounts` | `GET /accounts/v1/accounts` | New filtering capability |
+| `POST /v2.1/accounts/custombatch` | **REMOVED** | Use async parallel calls |
+
+---
+
+## Industry Best Practices (From Stripe, Shopify, Twilio, Google)
+
+### Communication Standards
+
+| Practice | Industry Example | Apply to Merchant API Migration |
+|----------|------------------|--------------------------------|
+| **Changelog subscription** | Shopify developer changelog | Subscribe to [Google Merchant API updates](https://developers.google.com/merchant/api/latest-updates) |
+| **Version headers** | Shopify `X-Shopify-Api-Version` | Monitor response headers for version drift |
+| **Dashboard warnings** | Shopify shows UI warnings for deprecated apps | Check Merchant Center for API warnings |
+| **Deprecation in tooling** | GraphQL Explorer shows deprecated fields | Use Google APIs Explorer to spot deprecations |
+
+### Versioning Model Comparison
+
+| Company | Release Cadence | Support Window | Overlap Period |
+|---------|-----------------|----------------|----------------|
+| **Shopify** | Quarterly (Jan, Apr, Jul, Oct) | 12 months minimum | 9 months |
+| **Google (Merchant)** | As needed | ~12 months typical | Varies |
+| **Stripe** | Continuous + dated versions | Long-term support | Generous |
+| **Twilio** | Major versions (v2 → v3) | Extended | Years |
+
+**Key Insight**: Shopify's model is most predictable. Google's Merchant API follows similar patterns but with less rigid scheduling.
+
+### Billing Best Practices
+
+From Google Places API migration guide:
+
+> "When migrating to a newer version of an API, you're also being billed for a different SKU. To avoid increased costs during the month of your transition, we recommend switching to the new APIs in production **as close to the beginning of the month as possible**."
+
+**Apply to Merchant API**:
+- API calls to Merchant API may have different pricing than Content API
+- Time your production cutover for early in billing cycle
+- Monitor costs during shadow traffic phase (you're paying for both APIs)
+
+### Deprecation Timeline Best Practices
+
+```
+INDUSTRY STANDARD TIMELINE
+==========================
+
+Announcement ─────────────────────────────────────────────► Removal
+     │                                                          │
+     ├── 12+ months warning (Shopify standard)                  │
+     │                                                          │
+     ├── 9 months overlap between versions                      │
+     │                                                          │
+     ├── Release candidates 3 months before stable              │
+     │                                                          │
+     └── Grace period with warnings before hard cutoff          │
+
+GOOGLE MERCHANT API TIMELINE
+============================
+
+Now ──────────────────────────────────────────────────► Aug 2026
+ │                                                          │
+ ├── Feb 28, 2026: v1beta shutdown                          │
+ │                                                          │
+ ├── ~7 months remaining (as of Jan 2026)                   │
+ │                                                          │
+ └── Content API fully deprecated ──────────────────────────┘
+```
+
+### Migration Team Model (Stripe Pattern)
+
+Stripe offers dedicated migration support. For enterprise Merchant API migrations:
+
+1. **Identify your Google contact** (TAM, SA, or Partner Manager)
+2. **Request migration review session** before starting
+3. **Establish escalation path** for production issues
+4. **Schedule check-ins** at each phase milestone
+
+### Fallback Behavior
+
+Industry standard (Shopify model):
+> "If your request doesn't include a version, then the API defaults to the oldest supported stable version."
+
+**Merchant API behavior**: After Content API shutdown, requests will fail (not fall forward). Plan accordingly.
+
+---
+
+## Version Monitoring Checklist
+
+Monitor these signals to detect version drift:
+
+- [ ] **Response headers** - Check for version indicators in API responses
+- [ ] **Deprecation warnings** - Log and alert on any deprecation notices
+- [ ] **Error codes** - New error codes may indicate version issues
+- [ ] **Changelog alerts** - Subscribe to Google's developer changelog
+- [ ] **Merchant Center UI** - Check for migration banners/warnings
+
+### Automated Monitoring Setup
+
+```javascript
+// Example: Log version-related response headers
+async function monitoredApiCall(request) {
+  const response = await merchantApi.call(request);
+
+  // Log version info
+  const apiVersion = response.headers['x-api-version'];
+  const deprecationWarning = response.headers['x-deprecation-warning'];
+
+  if (deprecationWarning) {
+    alertOps(`Deprecation warning: ${deprecationWarning}`);
+  }
+
+  metrics.record('api_version', apiVersion);
+  return response;
+}
+```
+
+---
+
 ## Resources
 
 - [Migration Overview](https://developers.google.com/merchant/api/guides/compatibility/overview)
@@ -317,12 +486,48 @@ async function shadowTest(product) {
 
 ---
 
-## Support Escalation
+## Support & Escalation
 
-**For Google Internal**: File through standard support channels
-**For Clients**: Merchant Center Help → Contact Support
-**Known Issues**: Check [Release Notes](https://developers.google.com/merchant/api/latest-updates)
+### Escalation Ladder
+
+| Severity | Issue Type | First Contact | Escalation Path |
+|----------|------------|---------------|-----------------|
+| **P0** | Production down, revenue impact | Google Support + TAM immediately | TAM → Engineering on-call |
+| **P1** | Migration blocker, deadline risk | TAM or Partner Manager | SA review → Product team |
+| **P2** | Technical questions, clarification | Google APIs Explorer, Stack Overflow | Support ticket |
+| **P3** | Documentation feedback, feature requests | [Feedback form](https://developers.google.com/merchant/api/support/give-feedback) | Changelog subscription |
+
+### Useful Contacts & Resources
+
+**For Google Internal (SAs/CSMs)**:
+- File through standard support channels
+- Use internal migration tracking tools
+- Escalate via TAM for enterprise accounts
+
+**For Clients**:
+- Merchant Center Help → Contact Support
+- [Stack Overflow: google-merchant-api](https://stackoverflow.com/questions/tagged/google-merchant-api)
+- [Issue Tracker](https://issuetracker.google.com/issues?q=componentid:171084)
+
+**Self-Service**:
+- [Google APIs Explorer](https://developers.google.com/merchant/api/reference/rest) - Test API calls directly
+- [Release Notes](https://developers.google.com/merchant/api/latest-updates) - Check for known issues
+- [Developer Changelog](https://developers.google.com/merchant/api/release-notes) - Subscribe for updates
+
+### When to Escalate
+
+**Escalate immediately if**:
+- Disapproval rate spikes >20% post-migration
+- API returning 5xx errors consistently
+- Data loss or corruption detected
+- Deadline at risk due to Google-side issues
+
+**Do NOT escalate for**:
+- Documentation clarification (use feedback form)
+- Feature requests (use feedback form)
+- Issues caused by client-side code bugs
 
 ---
 
-*This reference is for internal use and client enablement. Verify details against official documentation before implementation.*
+*Last updated: January 2026 | Based on official Google documentation + industry best practices from Stripe, Shopify, Twilio*
+*Verify details against [official documentation](https://developers.google.com/merchant/api) before implementation.*
