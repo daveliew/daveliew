@@ -1,4 +1,4 @@
-# Dave Liew
+# David Liew (@daveliew)
 
 > Building AI-powered solutions for real businesses
 
